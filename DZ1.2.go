@@ -1,26 +1,43 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type  Profession struct {
-	Doctor string
-	Driver string
-	Policeman string
-	Teacher string
-	Fireman string
+type human struct {
+	Name string
 }
+type worker struct {
+	human
+	Company string
+}
+type Doctor struct {
+	worker
+	Stack []string
+}
+type Driver struct {
+	worker
+	DrivingExperience []string
+}
+type Policeman struct {
+	worker
+	Rank string
+}
+type Teacher struct {
+	worker
+	Degree string
+}
+type Firefighter struct {
+	worker
+	Rank2 string
+}
+
 func main() {
-	var a = Profession{Teacher: "Учитель младших класов"}
-	var b = Profession{Doctor: "Педиатр"}
-	var c = Profession{Fireman: "Старший пожарник"}
-	var d = Profession{Policeman: "Полицейский ДПС"}
-	var f = Profession{Driver: "Водитель автобуса"}
-
-	fmt.Println(a,b,c,d,f)
-
-
+	user := Firefighter{Rank2: "Дежурный"}
+	user1 := worker{Company: "Рога и копыта"}
+	user3 := human{Name: "Ираклий"}
+	fmt.Println(user)
+	fmt.Println(user1)
+	fmt.Println(user3)
 }
+
 
 
